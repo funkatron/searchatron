@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Searchatron</title>
+
+	<!-- Load required vendor libs -->
+	<script src="spazcore/vendors/jquery-1.3.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="spazcore/vendors/json2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="spazcore/vendors/webtoolkit.base64.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- Load base SpazCore lib -->
+	<script src="spazcore/libs/spazcore.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- Load SpazCore helpers -->
+	<script src="spazcore/helpers/datetime.js" type="text/javascript" charset="utf-8"></script>
+	<script src="spazcore/helpers/javascript.js" type="text/javascript" charset="utf-8"></script>
+	<script src="spazcore/helpers/json.js" type="text/javascript" charset="utf-8"></script>
+	<script src="spazcore/helpers/string.js" type="text/javascript" charset="utf-8"></script>
+	<script src="spazcore/helpers/sys.js" type="text/javascript" charset="utf-8"></script>
+	<script src="spazcore/helpers/view.js" type="text/javascript" charset="utf-8"></script>
+	<script src="spazcore/helpers/xml.js" type="text/javascript" charset="utf-8"></script>
+	
+	<!-- Load SpazCore libraries -->
+	<script src="spazcore/libs/spazcron.js" type="text/javascript" charset="utf-8"></script>
+	<script src="spazcore/libs/spazprefs.js" type="text/javascript" charset="utf-8"></script>
+	<script src="spazcore/libs/spaztemplate.js" type="text/javascript" charset="utf-8"></script>
+	<script src="spazcore/libs/spaztwit.js" type="text/javascript" charset="utf-8"></script>	
+	
+
+	<!-- app libs -->
+	<script src="libs/jquery-ui-personalized-1.6rc2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/jquery.intercept.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/jquery.timer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/json2.js" type="text/javascript" charset="utf-8"></script>
+
+
+	<script src="application/init.js" type="text/javascript" charset="utf-8"></script>
+	<script src="application/controller.js" type="text/javascript" charset="utf-8"></script>
+	<script src="application/view.js" type="text/javascript" charset="utf-8"></script>
+	<script src="application/model.js" type="text/javascript" charset="utf-8"></script>
+
+
+	<link rel="stylesheet" href="css/jquery-ui-themeroller.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+	<link rel="stylesheet" href="css/humanmsg.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	
+	
+</head>
+
+<body>
+	<div id="container">
+		<div id="topbar"></div>
+		
+		<div id="sidebar">
+			<div id="searches-wrapper">
+				<ul id="saved-searches">
+				</ul>
+			</div>
+			<div id="sidebar-buttons">
+				<span class="button" id="add-search">add</span>
+				<span class="button" id="open-prefs">prefs</span>
+			</div>
+		</div>
+		<div id="messages">
+			<ul id="messagelist">
+				<li class="message">No messages yet!</li>
+			</ul>
+		</div>
+		
+		<div id="statusbar-wrapper">
+			<div id="statusbar"></div>
+		</div>
+		
+		
+	</div>
+
+</body>
+</html>

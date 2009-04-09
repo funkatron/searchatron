@@ -1,0 +1,3 @@
+[submodule "Resources/spazcore"]
+	path = Resources/spazcore
+	url = git://github.com/funkatron/spazcore.git

@@ -1,0 +1,24 @@
+#appname:Searchatron
+#appid:com.funkatron_productions.searchatron
+#publisher:Funkatron Productions
+#image:icon128.png
+#url:http://funkatron.com
+#guid:ec50814b-6f1d-47cc-9c77-a9f19adec64c
+#desc:A simple Twitter search application
+runtime:0.3
+api:0.3
+tiapp:0.3
+tifilesystem:0.3
+tiplatform:0.3
+tiui:0.3
+javascript:0.3
+tianalytics:0.3
+python:0.3
+ruby:0.3
+tidesktop:0.3
+tigrowl:0.3
+timedia:0.3
+timonkey:0.3
+tinetwork:0.3
+tinotification:0.3
+tiprocess:0.3
