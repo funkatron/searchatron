@@ -40,6 +40,9 @@ App.Model.getSearchResults = function(searchstr) {
 				this.relative_time = 
 				App.View.addMessage(this);
 			});
+			App.View.showNotification('New Search Results',
+				'You have new search results for '+searchstr
+				);
 			
 			$().trigger('endNewSearchResults');
 

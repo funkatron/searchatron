@@ -13,8 +13,11 @@ App.View.addMessage = function(msgobj) {
 	if ($('#'+msgobj.id).length < 1) {
 		var msgelm = App.View.createMessageElement(msgobj);
 		$.data(msgelm, 'unixtime', msgobj.unixtime);
+		sch.dump(msgelm);
 		$('#messagelist').append(msgelm);
+		$('#messagelist .message-meta a').attr('target', 'ti:systembrowser');
 	}
+	
 };
 
 
@@ -32,9 +35,10 @@ App.View.createMessageElement = function(msgobj) {
 	msgelm += '<div class="message-text"><strong><a href="http://twitter.com/'+msgobj.from_user+'" title="'+msgobj.from_user+'" '+tg_code+'>'+msgobj.from_user +'</a>:</strong> ';
 	msgelm += msgobj.text
 	msgelm += '</div>';
-	msgelm += '<div class="message-meta"><a href="http://twitter.com/'+msgobj.from_user+'/status/'+msgobj.id+'" '+tg_code+'>'+sch.getRelativeTime(msgobj.created_at)+'</span> <a class="button message-action message-action-reply" href="http://twitter.com/home?status=@'+msgobj.from_user+'&in_reply_to_status_id='+msgobj.id+'" '+tg_code+'>@</a></div>';
+	msgelm += '<div class="message-meta">From '+sch.fromHTMLSpecialChars(msgobj.source)+' &bull; <a href="http://twitter.com/'+msgobj.from_user+'/status/'+msgobj.id+'" '+tg_code+'>'+sch.getRelativeTime(msgobj.created_at)+'</a> &bull; <a class="button message-action message-action-reply" href="http://twitter.com/home?status=@'+msgobj.from_user+'&in_reply_to_status_id='+msgobj.id+'" '+tg_code+'>@reply</a></div>';
 	msgelm += '</div>';
 	msgelm += '</li>';
+	
 	return msgelm;
 };
 
@@ -112,6 +116,43 @@ App.View.resetContextMenu = function(e) {
 	Titanium.UI.setContextMenu(null);
 };
 
+App.View.showNotification = function(message, title, icon, delay, callback) {
+
+    // var notification = Titanium.Notification.createNotification(window);
+    // notification.setTitle("title");
+    // notification.setMessage("this is a message");
+    // notification.setIcon("app://logo_large.png");
+    // notification.setDelay(5000);
+    // notification.setCallback(function () {
+    //   alert("i've been clicked");
+    // });
+    // notification.show();
+
+	var notification = Titanium.Notification.createNotification(window);
+	notification.setTitle(title);
+	notification.setMessage(message);
+	
+	if (!icon) {
+		notification.setIcon("app://icon128.png");
+	} else {
+		notification.setIcon(icon);
+	}
+	
+	if (callback) {
+		notification.setCallback(callback);
+	}
+	
+	if (!delay) {
+		notification.setDelay(5000);
+	} else {
+		notification.setDelay(delay);
+	}
+	
+	notification.show();
+
+};
+
+
 App.View.showStatus = function(msg) {
 	if (App.View.statusTimeout) {
 		clearTimeout(App.View.statusTimeout);
@@ -126,7 +167,6 @@ App.View.showStatus = function(msg) {
 	App.View.statusTimeout = setTimeout(App.View.hideStatus, 6000);
 
 };
-
 
 
 App.View.hideStatus = function() {
