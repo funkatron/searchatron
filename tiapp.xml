@@ -2,7 +2,7 @@
 <ti:app xmlns:ti='http://ti.appcelerator.org'>
 <id>com.funkatron_productions.searchatron</id>
 <name>Searchatron</name>
-<version>0.7</version>
+<version>0.8</version>
 <publisher>Funkatron Productions</publisher>
 <url>http://funkatron.com</url>
 <copyright>2009 by Funkatron Productions</copyright>

@@ -15,6 +15,7 @@ App.init = function() {
 		'searches':['spaz', 'al3x', 'poop'],
 		'post-via':'web',
 		'refresh-rate':1000*120, // two minutes
+		'max-timeline-length':100,
 		'users':{}
 	});
 	App.Prefs.load();

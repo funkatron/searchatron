@@ -6,6 +6,8 @@ App.Model = {}
 
 App.Model.init = function() {
 	
+	App.Model.Twitter = new SpazTwit();
+	
 	/*
 		load up searches and display in view
 	*/
@@ -19,39 +21,8 @@ App.Model.init = function() {
 
 App.Model.getSearchResults = function(searchstr) {
 	sc.helpers.dump('gettingSearchResults');
-	$.ajax({
-		'url':'http://search.twitter.com/search.json?',
-		'data':{
-			"rpp": 50,
-			"q":   searchstr
-		},
-		'dataType':'text',
-		'type':'GET',
-		'success':function(data, textStatus) {
-			
-			$().trigger('beginNewSearchResults');
-			
-			data = JSON.parse(data);
-			
-			$.each(data.results, function() {
-				this.searchstr = searchstr;
-				var then = new Date(this.created_at);
-				this.unixdate = then.getTime();
-				this.relative_time = 
-				App.View.addMessage(this);
-			});
-			App.View.showNotification('New Search Results',
-				'You have new search results for '+searchstr
-				);
-			
-			$().trigger('endNewSearchResults');
-
-		},
-		'error':function() {
-			sc.helpers.dump('there was an error');
-		}
-	});
 	
+	App.Model.Twitter.search(searchstr, null, 50);
 };
 
 
